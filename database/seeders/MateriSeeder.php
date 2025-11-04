@@ -11,15 +11,15 @@ class MateriSeeder extends Seeder
     public function run(): void
     {
         Materi::create([
-        'judul' => 'PAWL',
-        'deskripsi' => 'Materi PAWL',
-        'thumbnail' => '/thumbnails/awikwok.jpg'
+        'judul' => 'Sains',
+        'deskripsi' => 'Jelajahi dunia sains, alam, dan lingkungan sekitar.',
+        'thumbnail' => '/thumbnails/ff.svg'
         ]);
 
         Materi::create([
-        'judul' => 'awikwok',
-        'deskripsi' => 'rawr',
-        'thumbnail' => 'thumbnails/pawl.png'
+        'judul' => 'Matematika',
+        'deskripsi' => 'Konsep dasar penjumlahan, pengurangan, perkalian, dan pembagian.',
+        'thumbnail' => 'thumbnails/mm.svg'
         ]);
     }
 }
