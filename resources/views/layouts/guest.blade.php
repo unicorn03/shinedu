@@ -37,6 +37,3 @@
         
     </body>
 </html>
-
-
-bg-red-700 text-white font-semibold px-4 py-2 rounded-md hover:bg-gray-800 transitio
