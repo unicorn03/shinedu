@@ -3,7 +3,7 @@
 
     <div class="pb-[50px]">
         <div class="max-w-7xl mx-auto sm:px-[15px] lg:py-[15px] bg-white px-10 rounded-xl">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-[15px]">
+            <div class="grid grid-cols-1 md:grid-cols-3 sm:grid gap-[15px]">
 
                 @forelse ($daftarMateri as $materi)
                     
