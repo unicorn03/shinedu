@@ -23,7 +23,7 @@
 
                 <div class="flex items-center space-x-4">
                     <a href="{{ route('dashboard') }}" class="font-semibold text-gray-700 hover:text-blue-800">Dashboard</a>
-                    <a href="#" class="font-semibold text-gray-700 hover:text-blue-800">Materi</a>
+                    <a href="{{ route('materi.index') }}" class="font-semibold text-gray-700 hover:text-blue-800">Materi</a>
                     <a href="#" class="font-semibold text-gray-700 hover:text-blue-800">Penghargaan</a>
                 </div>
 
