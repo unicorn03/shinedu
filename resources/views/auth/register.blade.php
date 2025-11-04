@@ -1,4 +1,7 @@
 <x-guest-layout>
+    <h3 class="text-center text-2xl font-bold text-gray-800 mb-6">
+        {{ __ ('Login ke Akun Anda')}}
+    </h3>
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
@@ -45,14 +48,11 @@
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Sudah Punya akun? Login') }}
-            </a>
-
-            <x-primary-button class="ms-4">
+        <div class="mt-2"> 
+            <button type="submit" 
+                class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#587ABD] hover:bg-[#4a69a3] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                 {{ __('Daftar') }}
-            </x-primary-button>
+            </button>
         </div>
     </form>
 </x-guest-layout>
