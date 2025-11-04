@@ -1,13 +1,13 @@
 <x-app-layout>
     <h2 class="text-[45px] max-w-7xl mx-auto px-8 py-8 flex items-center justify-between font-bold">Materi Pembelajaran</h2>
 
-    <div class="py-1 pb-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white py-10 px-10 rounded-xl">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="pb-[50px]">
+        <div class="max-w-7xl mx-auto sm:px-[15px] lg:py-[15px] bg-white px-10 rounded-xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-[15px]">
 
                 @forelse ($daftarMateri as $materi)
                     
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
                         
                         <img src="{{ asset($materi->thumbnail) }}" alt="Thumbnail {{ $materi->judul }}" class="w-full h-48 object-cover">
 
