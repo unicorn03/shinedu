@@ -7,8 +7,8 @@ use App\Http\Controllers\SubBabController;
 use App\Http\Controllers\KuisController;
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('landing'); // halaman depan (tanpa login)
+})->name('landing');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
