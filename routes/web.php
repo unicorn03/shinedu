@@ -20,7 +20,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/materi', [MateriController::class,'index'])->name('materi.index');
     Route::get('/materi/{materi}', [MateriController::class,'show'])->name('materi.show');
-    Route::get('/subbab/{subBab}', [MateriController::class,'show'])->name('subbab.show');
+    Route::get('/subbab/{subBab}', [SubBabController::class,'show'])->name('subbab.show');
     Route::get('/kuis/{kuis}',[KuisController::class,'show'])->name('kuis.show');
     Route::post('/kuis/{kuis}/submit', [KuisController::class,'submit'])->name('kuis.submit');
     Route::get('/kuis/hasil/{hasil}', [KuisController::class,'result'])->name('kuis.result');
