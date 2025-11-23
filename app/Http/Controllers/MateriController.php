@@ -16,4 +16,6 @@ class MateriController extends Controller
         $materi->load(  'subBabs', 'kuis');
         return view('materi.show',['materi'=>$materi]);
     }
+
+    
 }

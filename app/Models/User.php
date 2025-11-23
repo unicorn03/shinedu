@@ -47,4 +47,16 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function penghargaan()
+    {
+        return $this->belongsToMany(
+            Penghargaan::class,    
+            'user_achievements',    
+            'user_id',             
+            'achievement_id'       
+        )->withTimestamps();
+    }
+
+
 }

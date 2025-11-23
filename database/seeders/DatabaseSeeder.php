@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             MateriSeeder::class,
             SubBabSeeder::class,
             KuisSeeder::class,
+            KuisPertanyaanSeeder::class,
         ]);
     }
 }
