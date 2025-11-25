@@ -20,7 +20,7 @@ class SubBabSeeder extends Seeder
         if ($materiSains) {
 
             $isiMateriSains = <<<HTML
-            <h2><span style="font-size: 1.5em;">😃</span> Planet Terdekat dengan Matahari: Merkurius</h2>
+            <h2><span style="font-size: 1.5em;">😃</span>Planet Terdekat dengan Matahari: Merkurius</h2>
             
             <p><strong>1. Nama Planet:</strong></p>
             <ul>
@@ -63,7 +63,7 @@ class SubBabSeeder extends Seeder
         if ($materiMatematika) {
 
             $isiMateriMatematika = <<<HTML
-            <h2><span style="font-size: 1.5em;">😃</span> Matematika Ilmu Yang Menyenangkan</h2>
+            <h2><span style="font-size: 1.5em;">😃</span>Matematika Ilmu Yang Menyenangkan</h2>
             
             <p><strong>Aku sangat suka</strong></p>
         HTML;
@@ -74,6 +74,63 @@ class SubBabSeeder extends Seeder
                 'isi' => $isiMateriMatematika,
                 'urutan' => 1,
                 'slug' => 'matematika-dasar',
+            ]);
+        }
+
+        $materiBahasa = Materi::where('judul', 'Bahasa')->first();
+
+        if ($materiBahasa) {
+
+            $isiMateriBahasa = <<<HTML
+            <h2><span style="font-size: 1.5em;">😃</span>Dasar Frasa</h2>
+            
+            <p><strong>Frasa adalah kalimat yang memiliki makna tertentu</strong></p>
+        HTML;
+
+            SubBab::create([
+                'materi_id' => $materiBahasa->materi_id,
+                'judul' => 'Dasar Frasa',
+                'isi' => $isiMateriBahasa,
+                'urutan' => 1,
+                'slug' => 'dasar-frasa',
+            ]);
+        }
+
+        $materiGeografi = Materi::where('judul', 'Geografi')->first();
+
+        if ($materiGeografi) {
+
+            $isiMateriGeografi = <<<HTML
+            <h2><span style="font-size: 1.5em;">😃</span>Lapisan Bumi</h2>
+            
+            <p><strong>Bumi terdiri dari beberapa lapisan</strong></p>
+        HTML;
+
+            SubBab::create([
+                'materi_id' => $materiGeografi->materi_id,
+                'judul' => 'Lapisan Bumi',
+                'isi' => $isiMateriGeografi,
+                'urutan' => 1,
+                'slug' => 'lapisan-bumi',
+            ]);
+        }
+
+        $materiArtificial = Materi::where('judul', 'Artificial')->first();
+
+        if ($materiArtificial) {
+
+            $isiMateriArtificial = <<<HTML
+            <h2><span style="font-size: 1.5em;">😃</span>Dasar AI</h2>
+            
+            <p><strong>AI singkatan dari Artificial Intelligence</strong></p>
+        HTML;
+
+            SubBab::create([
+                'materi_id' => $materiArtificial->materi_id,
+                'judul' => 'Dasar AI',
+                'isi' => $isiMateriArtificial,
+                'urutan' => 1,
+                'slug' => 'dasar-ai',
             ]);
         }
     }

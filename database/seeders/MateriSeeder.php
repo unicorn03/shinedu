@@ -23,5 +23,26 @@ class MateriSeeder extends Seeder
         'thumbnail' => 'thumbnails/mm.svg',
         'slug' => 'matematika',
         ]);
+
+        Materi::create([
+        'judul' => 'Bahasa',
+        'deskripsi' => 'Tingkatkan kemampuan berbahasa dengan kosakata dan tata bahasa.',
+        'thumbnail' => 'thumbnails/bahasa.svg',
+        'slug' => 'bahasa',
+        ]);
+
+        Materi::create([
+        'judul' => 'Geografi',
+        'deskripsi' => 'Kenali benua, negara, dan ibu kota di seluruh dunia.',
+        'thumbnail' => 'thumbnails/geografi.svg',
+        'slug' => 'geografi',
+        ]);
+
+        Materi::create([
+        'judul' => 'Artificial',
+        'deskripsi' => 'Pahami tentang AI, Machine Learning, dan Deep Learning.',
+        'thumbnail' => 'thumbnails/artificial.svg',
+        'slug' => 'artificial',
+        ]);
     }
 }

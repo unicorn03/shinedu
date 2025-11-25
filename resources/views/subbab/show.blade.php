@@ -1,6 +1,6 @@
 <x-app-layout>
         <div class="max-w-7xl mx-auto px-8 py-8">
-        <a href="{{ route('materi.index', $subbab) }}" class="text-blue-600 hover:text-blue-800 text-sm font-medium inline-flex items-center">
+        <a href="{{ route('materi.show', $subbab->materi->slug) }}" class="text-blue-600 hover:text-blue-800 text-sm font-medium inline-flex items-center">
             <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
             Kembali
         </a>

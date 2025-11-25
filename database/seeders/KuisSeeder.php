@@ -35,5 +35,38 @@ class KuisSeeder extends Seeder
                 'slug' => 'kuis-penjumlahan',
             ]);
         }
+
+        $materiBahasa = Materi::where('judul', 'Bahasa')->first();
+
+        if($materiBahasa){
+            Kuis::create([
+                'materi_id' => $materiBahasa->materi_id,
+                'judul' => 'Kuis Frasa',
+                'deskripsi' => 'Kuis ini akan menguji kemampuan pemahaman anda tentang Frasa',
+                'slug' => 'kuis-frasa',
+            ]);
+        }
+
+        $materiGeografi = Materi::where('judul', 'Geografi')->first();
+
+        if($materiGeografi){
+            Kuis::create([
+                'materi_id' => $materiGeografi->materi_id,
+                'judul' => 'Kuis Lapisan Bumi',
+                'deskripsi' => 'Kuis ini akan menguji kemampuan pemahaman anda tentang Lapisan Bumi',
+                'slug' => 'kuis-lapisan-bumi',
+            ]);
+        }
+
+        $materiArtificial = Materi::where('judul', 'Artificial')->first();
+
+        if($materiArtificial){
+            Kuis::create([
+                'materi_id' => $materiArtificial->materi_id,
+                'judul' => 'Kuis Dasar AI',
+                'deskripsi' => 'Kuis ini akan menguji kemampuan pemahaman anda tentang dasar-dasar AI',
+                'slug' => 'kuis-dasar-ai',
+            ]);
+        }
     }
 }
