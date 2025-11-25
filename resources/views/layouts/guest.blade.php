@@ -18,7 +18,7 @@
         
         <nav class="bg-white shadow-sm">
             <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-                <a href="{{ route('dashboard') }}" class="text-2xl font-semibold text-blue-800">Shinedu</a>
+                <a href="{{ route('landing') }}" class="text-2xl font-semibold text-blue-800">Shinedu</a>
     
                 <div class="flex space-x-3">
                     <a href="{{ route('login') }}" class="bg-blue-700 text-white font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition">Login</a>
