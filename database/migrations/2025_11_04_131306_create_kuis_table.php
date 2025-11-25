@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('materi_id')->constrained('materis', 'materi_id');
             $table->string('judul');
             $table->text('deskripsi');
+            $table->text('slug')->unique();
             $table->timestamps();
         });
     }

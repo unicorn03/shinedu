@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('sub_bab_id');
             $table->enum('status', ['in_progress', 'completed'])->default('in_progress');
             $table->timestamps();
-        
+            
             $table->unique(['user_id', 'sub_bab_id']);
         });
         

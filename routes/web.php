@@ -22,9 +22,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/materi', [MateriController::class,'index'])->name('materi.index');
-    Route::get('/materi/{materi}', [MateriController::class,'show'])->name('materi.show');
-    Route::get('/subbab/{subBab}', [SubBabController::class,'show'])->name('subbab.show');
+    // Route::get('/materi/{materi}', [MateriController::class,'show'])->name('materi.show');
+    // Route::get('/subbab/{subBab}', [SubBabController::class,'show'])->name('subbab.show');
+    Route::prefix('materi')->group(function(){
+        Route::get('/', [MateriController::class,'index'])->name('materi.index');
+        Route::get('/{materi:slug}', [MateriController::class, 'showMateri'])->name('materi.show');
+        Route::get('/{materi:slug}/subbab/{subbab:slug}', [MateriController::class, 'showSubbab'])->name('subbab.show');
+        Route::get('/{materi:slug}/kuis/{kuis:slug}', [MateriController::class, 'showKuis'])->name('kuis.show');
+    });
     Route::get('/kuis/{kuis}',[KuisController::class,'show'])->name('kuis.show');
     Route::post('/kuis/{kuis}/submit', [KuisController::class,'submit'])->name('kuis.submit');
     Route::get('/kuis/hasil/{hasil}', [KuisController::class,'result'])->name('kuis.result');

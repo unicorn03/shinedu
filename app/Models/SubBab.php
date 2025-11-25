@@ -12,4 +12,8 @@ class SubBab extends Model
     {
         return $this->belongsTo(Materi::class, 'materi_id', 'materi_id');
     }
+
+    public function getRouteKeyName(){
+        return 'slug';
+    }
 }

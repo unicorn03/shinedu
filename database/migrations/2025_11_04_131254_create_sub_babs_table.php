@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('judul');
             $table->text('isi');
             $table->integer('urutan');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

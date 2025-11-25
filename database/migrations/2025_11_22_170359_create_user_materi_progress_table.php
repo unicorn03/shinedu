@@ -18,7 +18,7 @@ return new class extends Migration
             $table->enum('status', ['in_progress', 'completed'])->default('in_progress');
             $table->timestamp('waktu_selesai')->nullable();
             $table->timestamps();
-        
+            
             $table->unique(['user_id', 'materi_id']);
         });
         

@@ -23,7 +23,7 @@
                     <h3 class="font-bold text-2xl mb-4">Materi</h3>
                     
                     <div class="space-y-2"> @foreach ($materi->subBabs->sortBy('urutan') as $subBab)
-                            <a href="{{ route('subbab.show', $subBab->subbab_id) }}" 
+                            <a href="{{ route('subbab.show', [$materi, $subBab]) }}" 
                                class="block p-4 rounded-md border border-gray-200 hover:bg-gray-100 transition-colors">
                                 <span class="font-medium text-gray-800">{{ $subBab->urutan }}. {{ $subBab->judul }}</span>
                             </a>
@@ -36,7 +36,7 @@
                     
                     <div class="space-y-2">
                         @foreach ($materi->kuis as $itemKuis)
-                            <a href="{{ route('kuis.show', $itemKuis->kuis_id) }}" 
+                            <a href="{{ route('kuis.show', [$materi, $itemKuis]) }}" 
                                class="flex justify-between items-center p-4 rounded-md border border-gray-200 hover:bg-gray-100 transition-colors">
                                 
                                 <span class="font-medium text-gray-800">{{ $itemKuis->judul }}</span>

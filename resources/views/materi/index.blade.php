@@ -17,7 +17,7 @@
 
                             <div class="flex-grow"></div>
 
-                            <a href="{{ route('materi.show', $materi->materi_id) }}" class="inline-block mt-4 text-blue-600 hover:text-blue-800 font-semibold text-sm">
+                            <a href="{{ route('materi.show', $materi->slug) }}" class="inline-block mt-4 text-blue-600 hover:text-blue-800 font-semibold text-sm">
                                 Lihat Materi & Kuis &rarr;
                             </a>
                         </div>

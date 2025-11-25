@@ -17,4 +17,8 @@ class Materi extends Model
     public function kuis(){
         return $this->hasMany(Kuis::class,'materi_id','materi_id');
     }
+
+    public function getRouteKeyName(){
+        return 'slug';
+    }
 }

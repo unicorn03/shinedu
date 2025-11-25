@@ -1,6 +1,6 @@
 <x-app-layout>
         <div class="max-w-7xl mx-auto px-8 py-8">
-        <a href="{{ route('materi.index', $subBab->materi_id) }}" class="text-blue-600 hover:text-blue-800 text-sm font-medium inline-flex items-center">
+        <a href="{{ route('materi.index', $subbab) }}" class="text-blue-600 hover:text-blue-800 text-sm font-medium inline-flex items-center">
             <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
             Kembali
         </a>
@@ -12,13 +12,13 @@
                 <div class="p-6 md:p-10 text-gray-900">
 
                     <h1 class="text-4xl font-bold mb-4">
-                        {!! $subBab->judul !!}
+                        {!! $subbab->judul !!}
                     </h1>
 
                     <hr class="my-4">
 
                     <div class="prose max-w-none">
-                        {!! $subBab->isi !!}
+                        {!! $subbab->isi !!}
                     </div>
 
                     <div class="mt-10 pt-6 border-t border-gray-200 text-center">
@@ -40,6 +40,7 @@
                     transition: opacity .3s;">
             <h3 style="font-size:18px; font-weight:bold;">🎉 Achievement Baru!</h3>
             <p id="popupText" style="margin-top:5px;"></p>
+            
         </div>
 
         <!-- Confetti -->
@@ -49,7 +50,7 @@
         document.getElementById('btnComplete').addEventListener('click', function(e) {
             e.preventDefault();
 
-            fetch(`/materi/{{ $subBab->materi->materi_id }}/complete`, {
+            fetch(`/materi/{{ $subbab->materi->materi_id }}/complete`, {
                 method: 'POST',
                 headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' }
             })
