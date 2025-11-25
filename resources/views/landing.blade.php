@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Shinedu - Partner Belajar Terbaikmu</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+<x-app-layout>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
         
@@ -92,84 +85,6 @@
             background: linear-gradient(135deg, #7B9FE8 0%, #5B7FC7 100%);
         }
     </style>
-</head>
-<body class="bg-gray-50">
-    <!-- Navbar -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
-                <div class="flex items-center">
-                    <a href="{{ route('landing') }}" class="text-2xl font-semibold text-blue-800">Shinedu</a>
-                </div>
-
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-8">
-                    @auth
-                        <a href="{{ route('dashboard') }}" class="text-gray-700 hover:text-blue-600 transition-colors">Dashboard</a>
-                        <a href="{{ route('materi.index') }}" class="text-gray-700 hover:text-blue-600 transition-colors">Materi</a>
-                        <a href="{{ route('awards.show') }}" class="text-gray-700 hover:text-blue-600 transition-colors">Penghargaan</a>
-                        
-                        <!-- User Menu -->
-                        <div class="flex items-center space-x-3">
-                            <a href="{{ route('profile.edit') }}" class="text-blue-600 font-semibold hover:text-blue-700 transition-colors">
-                                {{ Auth::user()->username }}
-                            </a>
-                            <form method="POST" action="{{ route('logout') }}" class="inline">
-                                @csrf
-                                <button type="submit" class="btn-secondary">Logout</button>
-                            </form>
-                        </div>
-                    @else
-                        <a href="#" class="text-gray-700 hover:text-blue-600 transition-colors">Dashboard</a>
-                        <a href="#" class="text-gray-700 hover:text-blue-600 transition-colors">Materi</a>
-                        <a href="#" class="text-gray-700 hover:text-blue-600 transition-colors">Penghargaan</a>
-                        
-                        <!-- Auth Buttons -->
-                        <div class="flex items-center space-x-3">
-                            <a href="{{ route('login') }}" class="text-blue-600 font-semibold hover:text-blue-700 transition-colors">Masuk</a>
-                            <a href="{{ route('register') }}" class="btn-secondary">Daftar</a>
-                        </div>
-                    @endauth
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-blue-600">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="px-4 py-4 space-y-3">
-                @auth
-                    <a href="{{ route('dashboard') }}" class="block text-gray-700 hover:text-blue-600 transition-colors">Dashboard</a>
-                    <a href="{{ route('materi.index') }}" class="block text-gray-700 hover:text-blue-600 transition-colors">Materi</a>
-                    <a href="{{ route('awards.show') }}" class="block text-gray-700 hover:text-blue-600 transition-colors">Penghargaan</a>
-                    <div class="pt-3 border-t space-y-2">
-                        <a href="{{ route('profile.edit') }}" class="block text-center text-blue-600 font-semibold py-2">{{ Auth::user()->username }}</a>
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-                            <button type="submit" class="w-full text-center bg-red-500 text-white rounded-lg py-2">Logout</button>
-                        </form>
-                    </div>
-                @else
-                    <a href="#" class="block text-gray-700 hover:text-blue-600 transition-colors">Dashboard</a>
-                    <a href="#" class="block text-gray-700 hover:text-blue-600 transition-colors">Materi</a>
-                    <a href="#" class="block text-gray-700 hover:text-blue-600 transition-colors">Penghargaan</a>
-                    <div class="pt-3 border-t space-y-2">
-                        <a href="{{ route('login') }}" class="block text-center text-blue-600 font-semibold py-2">Masuk</a>
-                        <a href="{{ route('register') }}" class="block text-center bg-red-500 text-white rounded-lg py-2">Daftar</a>
-                    </div>
-                @endauth
-            </div>
-        </div>
-    </nav>
 
     <!-- Hero Section -->
     <section class="hero-gradient text-white py-20 lg:py-32 relative overflow-hidden">
@@ -184,21 +99,12 @@
                 <p class="text-xl sm:text-2xl mb-8 text-blue-100 max-w-2xl mx-auto">
                     Partner belajar terbaikmu!
                 </p>
-                @auth
-                    <a href="{{ route('dashboard') }}" class="btn-primary text-lg">
-                        Dashboard
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                        </svg>
-                    </a>
-                @else
-                    <a href="{{ route('login') }}" class="btn-primary text-lg">
-                        Mulai Belajar
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                        </svg>
-                    </a>
-                @endauth
+                <a href="{{ route('login') }}" class="btn-primary text-lg">
+                    Mulai Belajar
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
@@ -294,39 +200,19 @@
             <p class="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
                 Daftar sekarang dan dapatkan akses ke semua materi secara gratis
             </p>
-            @auth
-                <a href="{{ route('materi.index') }}" class="btn-primary text-lg inline-flex items-center gap-2">
-                    Lihat Materi
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                    </svg>
-                </a>
-            @else
-                <a href="{{ route('register') }}" class="btn-primary text-lg inline-flex items-center gap-2">
-                    Daftar Sekarang
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                    </svg>
-                </a>
-            @endauth
+            <a href="{{ route('register') }}" class="btn-primary text-lg inline-flex items-center gap-2">
+                Daftar Sekarang
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-300 py-5">
-            <div class="border-t border-gray-800 text-center">
-                <p class="text-gray-400">&copy; 2024 Shinedu. All rights reserved.</p>
-            </div>
+        <div class="border-t border-gray-800 text-center">
+            <p class="text-gray-400">© 2024 Shinedu. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
-</body>
-</html>
+</x-app-layout>
