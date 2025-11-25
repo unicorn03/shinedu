@@ -13,7 +13,7 @@ class KuisPertanyaanSeeder extends Seeder
         // Cari kuis dulu
         $kuisSains = Kuis::where('judul', 'Kuis Sains Dasar')->first();
         $kuisMatematika = Kuis::where('judul', 'Kuis Penjumlahan')->first();
-        $kuisBahasa = Kuis::where('judul', 'Kuis Frasa Dasar')->first();
+        $kuisBahasa = Kuis::where('judul', 'Kuis Frasa')->first();
         $kuisGeografi = Kuis::where('judul', 'Kuis Lapisan Bumi')->first();
         $kuisArtificial = Kuis::where('judul', 'Kuis Dasar AI')->first();
 
