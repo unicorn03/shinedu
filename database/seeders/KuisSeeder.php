@@ -20,7 +20,8 @@ class KuisSeeder extends Seeder
             Kuis::create([
                 'materi_id' => $materiSains->materi_id,
                 'judul' => 'Kuis Sains Dasar',
-                'deskripsi' => 'Kuis ini akan menguji kemampuan pemahaman anda tentang Sains dasar'
+                'deskripsi' => 'Kuis ini akan menguji kemampuan pemahaman anda tentang Sains dasar',
+                'slug' => 'kuis-sains-dasar',
             ]);
         }
 
@@ -30,7 +31,8 @@ class KuisSeeder extends Seeder
             Kuis::create([
                 'materi_id' => $materiMatematika->materi_id,
                 'judul' => 'Kuis Penjumlahan',
-                'deskripsi' => 'Kuis ini akan menguji kemampuan pemahaman anda tentang Penjumlahan'
+                'deskripsi' => 'Kuis ini akan menguji kemampuan pemahaman anda tentang Penjumlahan',
+                'slug' => 'kuis-penjumlahan',
             ]);
         }
     }

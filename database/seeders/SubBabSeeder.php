@@ -54,6 +54,7 @@ class SubBabSeeder extends Seeder
                 'judul' => 'Sains Dasar',
                 'isi' => $isiMateriSains,
                 'urutan' => 1,
+                'slug' => 'sains-dasar',
             ]);
         }
 
@@ -72,6 +73,7 @@ class SubBabSeeder extends Seeder
                 'judul' => 'Matematika Dasar',
                 'isi' => $isiMateriMatematika,
                 'urutan' => 1,
+                'slug' => 'matematika-dasar',
             ]);
         }
     }

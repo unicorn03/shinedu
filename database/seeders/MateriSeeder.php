@@ -13,13 +13,15 @@ class MateriSeeder extends Seeder
         Materi::create([
         'judul' => 'Sains',
         'deskripsi' => 'Jelajahi dunia sains, alam, dan lingkungan sekitar.',
-        'thumbnail' => '/thumbnails/ff.svg'
+        'thumbnail' => '/thumbnails/ff.svg',
+        'slug' => 'sains',
         ]);
 
         Materi::create([
         'judul' => 'Matematika',
         'deskripsi' => 'Konsep dasar penjumlahan, pengurangan, perkalian, dan pembagian.',
-        'thumbnail' => 'thumbnails/mm.svg'
+        'thumbnail' => 'thumbnails/mm.svg',
+        'slug' => 'matematika',
         ]);
     }
 }

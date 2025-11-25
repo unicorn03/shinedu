@@ -31,8 +31,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/{materi:slug}/kuis/{kuis:slug}', [MateriController::class, 'showKuis'])->name('kuis.show');
     });
     Route::get('/kuis/{kuis}',[KuisController::class,'show'])->name('kuis.show');
-    Route::post('/kuis/{kuis}/submit', [KuisController::class,'submit'])->name('kuis.submit');
-    Route::get('/kuis/hasil/{hasil}', [KuisController::class,'result'])->name('kuis.result');
+    Route::post('/kuis/{kuis:slug}/submit', [KuisController::class,'submit'])->name('kuis.submit');Route::get('/kuis/hasil/{hasil}', [KuisController::class,'result'])->name('kuis.result');
     Route::get('/penghargaan', [AwardsController::class, 'show'])
         ->name('awards.show');
     Route::get('/awards/data', [AwardsController::class, 'index'])

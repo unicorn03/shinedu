@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="p-8">
+    <div class="max-w-7xl mx-auto px-6 py-4 p-8">
         <h1 class="text-3xl font-bold mb-6">Dashboard</h1>
 
         <div class="grid grid-cols-4 gap-4 mb-8">

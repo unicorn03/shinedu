@@ -5,7 +5,7 @@
 
     <div class="py-12">
         <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
-            <form method="POST" action="{{ route('kuis.submit', $kuis->kuis_id) }}">
+            <form method="POST" action="{{ route('kuis.submit', $kuis->slug) }}">
                 @csrf
                 <div class="bg-white p-6 rounded-lg shadow-lg">
                     @foreach ($kuis->pertanyaan as $soal)

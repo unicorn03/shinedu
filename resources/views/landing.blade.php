@@ -313,36 +313,8 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="col-span-1 md:col-span-2">
-                    <h3 class="text-2xl font-bold text-white mb-4">Shinedu</h3>
-                    <p class="text-gray-400 mb-4">
-                        Platform pembelajaran online terbaik untuk meningkatkan pengetahuan dan keterampilan Anda.
-                    </p>
-                </div>
-
-                <div>
-                    <h4 class="text-white font-semibold mb-4">Link Cepat</h4>
-                    <ul class="space-y-2">
-                        <li><a href="{{ route('dashboard') }}" class="hover:text-white transition-colors">Dashboard</a></li>
-                        <li><a href="{{ route('materi.index') }}" class="hover:text-white transition-colors">Materi</a></li>
-                        <li><a href="{{ route('awards.show') }}" class="hover:text-white transition-colors">Penghargaan</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-white font-semibold mb-4">Dukungan</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-white transition-colors">Bantuan</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Kontak</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+    <footer class="bg-gray-900 text-gray-300 py-5">
+            <div class="border-t border-gray-800 text-center">
                 <p class="text-gray-400">&copy; 2024 Shinedu. All rights reserved.</p>
             </div>
         </div>
